@@ -1,1 +1,3 @@
-web: gunicorn covid19API.wsgi --log-file -
+web: gunicorn covid19API.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
